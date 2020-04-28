@@ -1,0 +1,63 @@
+body{
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-weight: 800;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    justify-content: center;
+    align-content: center;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.grid img{
+    width: 200px;
+    height: 200px;
+    /*denna grej gör att pekaren interaktiv*/
+    cursor: pointer;
+}
+
+#lightbox{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+}
+
+#lightbox.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img{
+    max-width: 90%;
+    max-height: 80%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid white
+}
+
+@media screen and (max-width: 700px){
+    .grid{
+        padding-top: 15em;
+        grid-template-columns: repeat(2, 200px);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .grid{
+        padding-top: 40em;
+        grid-template-columns: repeat(1, 200px);
+    }
+}
